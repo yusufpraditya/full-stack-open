@@ -56,6 +56,14 @@ const App = () => {
         return;
       }
 
+      if (!newNumber) {
+        sendNotification({
+          type: "error",
+          message: "Error: Number is missing",
+        });
+        return;
+      }
+
       const replaceOldNumber = confirm(
         `${newName} is already added to phonebook, replace the old number with a new one?`
       );
@@ -80,14 +88,34 @@ const App = () => {
               message: `${person.name}'s new number: ${newNumber}`,
             });
           })
-          .catch(() => {
+          .catch((error) => {
+            console.log(error)
             sendNotification({
               type: "error",
-              message: `${person.name} has already been deleted`,
+              message: `${person.name} has already been deleted. Please reload the page`,
             });
           });
         return;
       }
+      return;
+    }
+
+    if (!newName && !newNumber) {
+      sendNotification({
+        type: "error",
+        message: "Error: Name & Number are missing",
+      });
+      return;
+    }
+
+    if (!newName) {
+      sendNotification({ type: "error", message: "Error: Name is missing" });
+      return;
+    }
+
+    if (!newNumber) {
+      sendNotification({ type: "error", message: "Error: Number is missing" });
+      return;
     }
 
     const newPerson = {
@@ -95,19 +123,24 @@ const App = () => {
       number: newNumber,
     };
 
-    personService.create(newPerson).then((response) => {
-      const newPersons = persons.concat(response);
-      setPersons(newPersons);
-      setFilteredPersons(newPersons);
+    personService
+      .create(newPerson)
+      .then((response) => {
+        const newPersons = persons.concat(response);
+        setPersons(newPersons);
+        setFilteredPersons(newPersons);
 
-      setNewName("");
-      setNewNumber("");
+        setNewName("");
+        setNewNumber("");
 
-      sendNotification({
-        type: "success",
-        message: `Added ${newName}`,
-      });
-    });
+        sendNotification({
+          type: "success",
+          message: `Added ${newName}`,
+        });
+      })
+      .catch((error) =>
+        sendNotification({ type: "error", message: error.message })
+      );
   };
 
   const handleDelete = (id) => {
@@ -115,17 +148,20 @@ const App = () => {
     const deleteConfirmed = confirm(`Delete ${personName}?`);
 
     if (deleteConfirmed) {
-      personService.deleteById(id).then(() => {
-        const newPersons = persons.filter((person) => person.id != id);
-        setPersons(newPersons);
-        setFilteredPersons(newPersons);
-        console.log(newPersons)
-      }).catch(() => {
-        sendNotification({
-          type: "error",
-          message: `${personName} has already been deleted. Please reload the page`
+      personService
+        .deleteById(id)
+        .then(() => {
+          const newPersons = persons.filter((person) => person.id != id);
+          setPersons(newPersons);
+          setFilteredPersons(newPersons);
+          console.log(newPersons);
         })
-      });
+        .catch(() => {
+          sendNotification({
+            type: "error",
+            message: `${personName} has already been deleted. Please reload the page`,
+          });
+        });
     }
   };
 

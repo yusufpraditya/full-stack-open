@@ -7,13 +7,21 @@ const getAll = () => {
 };
 
 const create = (newPerson) => {
-  return axios.post(baseUrl, newPerson).then((response) => response.data);
+  return axios
+    .post(baseUrl, newPerson)
+    .then((response) => response.data)
+    .catch((error) => {
+      throw new Error(error.response.data.error);
+    });
 };
 
 const update = (id, newPerson) => {
   return axios
     .put(`${baseUrl}/${id}`, newPerson)
-    .then((response) => response.data);
+    .then((response) => response.data)
+    .catch((error) => {
+      throw new Error(error.response.data.error);
+    });
 };
 
 const deleteById = (id) => {
