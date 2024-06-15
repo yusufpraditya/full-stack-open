@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static("dist"));
 
-morgan.token("body", (req, res) =>
+morgan.token("body", (req) =>
   JSON.stringify(req.body) === "{}" ? "" : JSON.stringify(req.body)
 );
 

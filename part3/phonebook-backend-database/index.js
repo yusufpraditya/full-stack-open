@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-morgan.token("body", (req, res) =>
+morgan.token("body", (req) =>
   JSON.stringify(req.body) === "{}" ? "" : JSON.stringify(req.body)
 );
 
