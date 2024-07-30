@@ -1,4 +1,5 @@
 import axios from "axios";
+
 const baseUrl = "/api/blogs";
 
 const getAll = async () => {
@@ -15,8 +16,7 @@ const add = async (blogDetail, token) => {
       },
     };
 
-    const response = await axios.post(baseUrl, blogDetail, config);
-    return response;
+    return await axios.post(baseUrl, blogDetail, config);
   } catch (error) {
     throw new Error(error.response.data.error);
   }
@@ -30,12 +30,7 @@ const update = async (blogDetail, token) => {
       },
     };
 
-    const response = await axios.put(
-      `${baseUrl}/${blogDetail.id}`,
-      blogDetail,
-      config
-    );
-    return response;
+    return await axios.put(`${baseUrl}/${blogDetail.id}`, blogDetail, config);
   } catch (error) {
     throw new Error(error.response.data.error);
   }

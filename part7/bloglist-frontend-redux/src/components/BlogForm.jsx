@@ -1,11 +1,17 @@
 import { useState } from "react";
+import { addBlog } from "../reducers/blogReducer.js";
+import { useDispatch } from "react-redux";
 
-const BlogForm = ({ addBlog }) => {
+const BlogForm = ({ blogRef, user }) => {
   const [newBlog, setNewBlog] = useState({});
+  const dispatch = useDispatch();
 
   const handleAddBlog = (event) => {
     event.preventDefault();
-    addBlog(newBlog);
+
+    blogRef.current.toggleVisibility();
+
+    dispatch(addBlog(newBlog, user));
 
     setNewBlog({});
   };

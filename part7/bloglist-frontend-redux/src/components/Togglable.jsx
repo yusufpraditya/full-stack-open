@@ -18,12 +18,16 @@ const Togglable = forwardRef((props, ref) => {
   return (
     <div>
       {!visible && (
-        <button data-testid="togglable-show-btn" onClick={toggleVisibility}>{props.buttonLabel}</button>
+        <button data-testid="togglable-show-btn" onClick={toggleVisibility}>
+          {props.buttonLabel}
+        </button>
       )}
       {visible && (
         <>
           {props.children}
-          <button data-testid="togglable-cancel-btn" onClick={toggleVisibility}>Cancel</button>
+          <button data-testid="togglable-cancel-btn" onClick={toggleVisibility}>
+            Cancel
+          </button>
         </>
       )}
     </div>

@@ -1,28 +1,21 @@
 import authService from "../services/auth.js";
+import { setNotification } from "../reducers/notificationReducer.js";
+import { useDispatch } from "react-redux";
+import { setSignedInUser } from "../reducers/userReducer.js";
 
-const LoginForm = ({
-  username,
-  password,
-  setUsername,
-  setPassword,
-  setUser,
-  setNotification,
-}) => {
+const LoginForm = ({ username, password, setUsername, setPassword }) => {
+  const dispatch = useDispatch();
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
       const user = await authService.login(username, password);
-      setUser(user);
+      dispatch(setSignedInUser(user));
 
       window.localStorage.setItem("user", JSON.stringify(user));
     } catch (error) {
-      setNotification({
-        type: "error",
-        message: error.message,
-      });
-
-      setTimeout(() => setNotification(null), 2500);
+      dispatch(setNotification("error", error.message));
     }
   };
 
