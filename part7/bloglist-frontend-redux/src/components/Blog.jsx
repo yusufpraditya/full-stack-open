@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { likeBlog, deleteBlog } from "../reducers/blogReducer";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import "./Blog.css";
 
-const Blog = ({ blog, loggedUser }) => {
+const Blog = ({ blog }) => {
   const [visible, setVisible] = useState(false);
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
 
   const toggleVisibility = () => {
     setVisible(!visible);
@@ -15,11 +16,11 @@ const Blog = ({ blog, loggedUser }) => {
   const handleLikeButton = () => {
     const newBlog = { ...blog, likes: blog.likes + 1 };
 
-    dispatch(likeBlog(newBlog, loggedUser));
+    dispatch(likeBlog(newBlog, user));
   };
 
   const handleDeleteButton = () => {
-    dispatch(deleteBlog(blog, loggedUser));
+    dispatch(deleteBlog(blog, user));
   };
 
   return (
@@ -29,7 +30,7 @@ const Blog = ({ blog, loggedUser }) => {
         <button data-testid="blog-toggle-btn" onClick={toggleVisibility}>
           {visible ? "hide" : "show"}
         </button>
-        {loggedUser.username === blog.creator.username && (
+        {user.username === blog.creator.username && (
           <button data-testid="blog-delete-btn" onClick={handleDeleteButton}>
             delete
           </button>

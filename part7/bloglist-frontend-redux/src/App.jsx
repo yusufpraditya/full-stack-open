@@ -63,10 +63,10 @@ const App = () => {
           </p>
 
           <Togglable buttonLabel="New blog" ref={blogRef}>
-            <BlogForm blogRef={blogRef} user={user} />
+            <BlogForm blogRef={blogRef} />
           </Togglable>
 
-          <BlogList loggedUser={user} />
+          <BlogList />
         </>
       )}
     </div>
