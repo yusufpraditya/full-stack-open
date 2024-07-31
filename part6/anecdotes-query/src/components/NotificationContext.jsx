@@ -46,7 +46,7 @@ export const useTimeoutRef = () => {
 export const NotificationContextProvider = (props) => {
   const [notification, notificationDispatch] = useReducer(
     notificationReducer,
-    null
+    null,
   );
 
   const timeoutRef = useRef(null);
