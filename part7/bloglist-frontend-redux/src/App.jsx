@@ -1,75 +1,48 @@
-import { useState, useEffect, useRef } from "react";
-import { useSelector, useDispatch } from "react-redux";
-
-import { initializeBlogs } from "./reducers/blogReducer";
-import { setSignedInUser, logoutUser } from "./reducers/userReducer.js";
-
-import BlogList from "./components/BlogList";
-import LoginForm from "./components/LoginForm";
-import BlogForm from "./components/BlogForm";
-import Notification from "./components/Notification";
-import Togglable from "./components/Togglable";
-
-import "./App.css";
+import Home from "@/pages/Home";
+import { useEffect, useState } from "react";
+import Navbar from "@/components/Navbar.jsx";
+import { useDispatch, useSelector } from "react-redux";
+import { Routes, Route } from "react-router-dom";
+import Users from "@/pages/Users/index.js";
+import User from "@/pages/Users/User/index.js";
+import Blog from "@/pages/Home/Blog.jsx";
+import BlogList from "@/pages/Home/BlogList.jsx";
+import { initializeBlogs } from "@/reducers/blogReducer.js";
+import { initializeUsers, setSignedInUser } from "@/reducers/userReducer.js";
+import { useLocalStorage } from "@/hooks/useLocalStorage.js";
+import Notification from "@/components/Notification.jsx";
 
 const App = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user.loggedInUser);
   const notification = useSelector((state) => state.notification);
-  const dispatch = useDispatch();
+  const [loginInfo, setLoginInfo] = useState({ username: "", password: "" });
+  const userFromLocalStorage = useLocalStorage("loggedInUser");
 
-  const blogRef = useRef(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(initializeBlogs());
+    dispatch(initializeUsers());
+    dispatch(setSignedInUser(userFromLocalStorage));
   }, []);
-
-  useEffect(() => {
-    const userJson = window.localStorage.getItem("user");
-    const user = JSON.parse(userJson);
-
-    dispatch(setSignedInUser(user));
-  }, []);
-
-  const handleLogoutButton = () => {
-    window.localStorage.removeItem("user");
-
-    dispatch(logoutUser());
-    setUsername("");
-    setPassword("");
-  };
 
   return (
-    <div>
+    <>
+      {user !== null && <Navbar setLoginInfo={setLoginInfo} />}
       {notification.content && (
         <Notification notification={notification.content} />
       )}
-      {user === null && (
-        <LoginForm
-          username={username}
-          password={password}
-          setUsername={setUsername}
-          setPassword={setPassword}
+      <Routes>
+        <Route
+          path="/"
+          element={<Home loginInfo={loginInfo} setLoginInfo={setLoginInfo} />}
         />
-      )}
-
-      {user !== null && (
-        <>
-          <p>
-            {user.name} logged in{" "}
-            <button onClick={handleLogoutButton}>Logout</button>
-          </p>
-
-          <Togglable buttonLabel="New blog" ref={blogRef}>
-            <BlogForm blogRef={blogRef} />
-          </Togglable>
-
-          <BlogList />
-        </>
-      )}
-    </div>
+        <Route path="/users" element={<Users />} />
+        <Route path="/users/:id" element={<User />} />
+        <Route path="/blogs" element={<BlogList />} />
+        <Route path="/blogs/:id" element={<Blog />} />
+      </Routes>
+    </>
   );
 };
 

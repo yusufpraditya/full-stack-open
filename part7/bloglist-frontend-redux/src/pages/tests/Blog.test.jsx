@@ -1,7 +1,7 @@
-import { test, expect, vi} from "vitest";
+import { test, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import Blog from "./Blog";
+import Blog from "../Home/Blog.jsx";
 
 const blog = {
   title: "Canonical string reduction",
@@ -51,7 +51,7 @@ test("after clicking the button, blog likes & url are displayed", async () => {
 
 test("clicking like button twice causes event handler called twice", async () => {
   const likeBlog = vi.fn();
-  
+
   render(<Blog blog={blog} loggedUser={loggedUser} likeBlog={likeBlog} />);
 
   const user = userEvent.setup();
@@ -59,9 +59,9 @@ test("clicking like button twice causes event handler called twice", async () =>
   const toggleBtn = screen.getByTestId("blog-toggle-btn");
   await user.click(toggleBtn);
 
-  const likeBtn = screen.getByTestId("blog-like-btn")
+  const likeBtn = screen.getByTestId("blog-like-btn");
   await user.click(likeBtn);
   await user.click(likeBtn);
 
   expect(likeBlog.mock.calls).toHaveLength(2);
-})
+});

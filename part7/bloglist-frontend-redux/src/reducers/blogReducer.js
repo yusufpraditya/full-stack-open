@@ -15,6 +15,11 @@ const blogSlice = createSlice({
   },
 });
 
+export const selectBlogById = (state, id) => {
+  if (!state.blogList) return null;
+  return state.blogList.find((blog) => blog.id === id);
+};
+
 const { setBlogs, appendBlog } = blogSlice.actions;
 
 export const initializeBlogs = () => {
@@ -89,6 +94,19 @@ export const deleteBlog = (blog, user) => {
           ),
         );
       }
+    } catch (error) {
+      dispatch(setNotification("error", error.message));
+    }
+  };
+};
+
+export const addComment = (blogId, comment) => {
+  return async (dispatch) => {
+    try {
+      await blogService.addComment(blogId, comment);
+
+      const blogs = await blogService.getAll();
+      dispatch(setBlogs(blogs));
     } catch (error) {
       dispatch(setNotification("error", error.message));
     }

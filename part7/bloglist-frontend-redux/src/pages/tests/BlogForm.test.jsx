@@ -1,7 +1,7 @@
 import { test, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import BlogForm from "./BlogForm";
+import BlogForm from "../Home/BlogForm.jsx";
 
 test("blog form calls the callback with the right details", async () => {
   const addBlog = vi.fn();

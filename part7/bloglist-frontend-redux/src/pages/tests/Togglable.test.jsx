@@ -1,7 +1,7 @@
 import { describe, test, expect, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import Togglable from "./Togglable";
+import Togglable from "../../components/Togglable.jsx";
 
 describe("<Togglable />", () => {
   let container;
@@ -10,7 +10,7 @@ describe("<Togglable />", () => {
     container = render(
       <Togglable buttonLabel="show">
         <div data-testid="children">children content</div>
-      </Togglable>
+      </Togglable>,
     ).container;
   });
 
@@ -26,5 +26,5 @@ describe("<Togglable />", () => {
 
     const element = screen.getByTestId("children");
     expect(element).toBeDefined();
-  })
+  });
 });

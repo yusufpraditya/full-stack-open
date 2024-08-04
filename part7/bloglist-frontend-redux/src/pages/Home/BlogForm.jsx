@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { addBlog } from "../reducers/blogReducer.js";
+import { addBlog } from "@/reducers/blogReducer.js";
 import { useDispatch, useSelector } from "react-redux";
+import Button from "@/components/Button.jsx";
 
 const BlogForm = ({ blogRef }) => {
   const [newBlog, setNewBlog] = useState({});
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user.loggedInUser);
 
   const handleAddBlog = (event) => {
     event.preventDefault();
@@ -77,7 +78,7 @@ const BlogForm = ({ blogRef }) => {
           />
         </div>
 
-        <button data-testid="blog-form-submit">Add</button>
+        <Button data-testid="blog-form-submit">Add</Button>
       </form>
     </>
   );

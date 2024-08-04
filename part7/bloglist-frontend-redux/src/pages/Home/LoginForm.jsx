@@ -1,30 +1,32 @@
-import authService from "../services/auth.js";
-import { setNotification } from "../reducers/notificationReducer.js";
+import authService from "../../services/auth.js";
+import { setNotification } from "@/reducers/notificationReducer.js";
 import { useDispatch } from "react-redux";
-import { setSignedInUser } from "../reducers/userReducer.js";
+import { setSignedInUser } from "@/reducers/userReducer.js";
+import Button from "@/components/Button.jsx";
 
-const LoginForm = ({ username, password, setUsername, setPassword }) => {
+const LoginForm = ({ loginInfo, setLoginInfo }) => {
   const dispatch = useDispatch();
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const user = await authService.login(username, password);
+      const user = await authService.login(
+        loginInfo.username,
+        loginInfo.password,
+      );
       dispatch(setSignedInUser(user));
-
-      window.localStorage.setItem("user", JSON.stringify(user));
     } catch (error) {
       dispatch(setNotification("error", error.message));
     }
   };
 
   const handleUsernameChange = ({ target }) => {
-    setUsername(target.value);
+    setLoginInfo({ ...loginInfo, username: target.value });
   };
 
   const handlePasswordChange = ({ target }) => {
-    setPassword(target.value);
+    setLoginInfo({ ...loginInfo, password: target.value });
   };
 
   return (
@@ -38,7 +40,7 @@ const LoginForm = ({ username, password, setUsername, setPassword }) => {
             id="username"
             placeholder="username"
             autoComplete="off"
-            value={username}
+            value={loginInfo.username}
             onChange={handleUsernameChange}
           />
         </div>
@@ -48,11 +50,11 @@ const LoginForm = ({ username, password, setUsername, setPassword }) => {
             type="password"
             id="password"
             placeholder="password"
-            value={password}
+            value={loginInfo.password}
             onChange={handlePasswordChange}
           />
         </div>
-        <input type="submit" value="Login" />
+        <Button>Login</Button>
       </form>
     </>
   );

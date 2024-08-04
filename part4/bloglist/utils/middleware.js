@@ -20,7 +20,10 @@ const errorHandler = (error, request, response, next) => {
     return response.status(400).send({ error: "malformatted id" });
   } else if (error.name === "ValidationError") {
     return response.status(400).json({ error: error.message });
-  } else if (error.name === "UnauthorizedError" || error.name === "JsonWebTokenError") {
+  } else if (
+    error.name === "UnauthorizedError" ||
+    error.name === "JsonWebTokenError"
+  ) {
     return response.status(401).json({ error: error.message });
   }
 
@@ -37,19 +40,18 @@ const tokenExtractor = (request, response, next) => {
   }
 
   next();
-}
+};
 
 const userExtractor = (request, response, next) => {
   let decodedToken;
 
   try {
     decodedToken = jwt.verify(request.token, process.env.SECRET);
-  } catch(error) {
+  } catch (error) {
     return next(error);
   }
 
   if (!decodedToken.id) {
-    console.log("DDD");
     const error = {
       name: "UnauthorizedError",
       message: "invalid token",
@@ -61,12 +63,12 @@ const userExtractor = (request, response, next) => {
   request.user = decodedToken;
 
   next();
-}
+};
 
 module.exports = {
   requestLogger,
   unknownEndpoint,
   errorHandler,
   tokenExtractor,
-  userExtractor
+  userExtractor,
 };

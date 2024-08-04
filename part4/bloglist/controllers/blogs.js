@@ -40,7 +40,7 @@ blogRouter.post(
     } catch (error) {
       next(error);
     }
-  }
+  },
 );
 
 blogRouter.get("/", async (request, response) => {
@@ -101,7 +101,25 @@ blogRouter.delete(
     } catch (error) {
       next(error);
     }
-  }
+  },
 );
+
+blogRouter.post("/:id/comments", async (request, response, next) => {
+  const blogBody = { ...request.body };
+  const id = request.params.id;
+
+  if (!blogBody.comment) return response.status(400).end();
+
+  const comment = blogBody.comment;
+  const blog = await Blog.findById(id);
+  blog.comments.push(comment);
+
+  try {
+    await blog.save();
+    response.status(201).end();
+  } catch (error) {
+    next(error);
+  }
+});
 
 module.exports = blogRouter;

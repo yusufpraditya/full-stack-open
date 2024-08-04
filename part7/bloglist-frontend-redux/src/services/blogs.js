@@ -8,7 +8,7 @@ const getAll = async () => {
   return response.data;
 };
 
-const add = async (blogDetail, token) => {
+const addBlog = async (blogDetail, token) => {
   try {
     const config = {
       headers: {
@@ -17,6 +17,18 @@ const add = async (blogDetail, token) => {
     };
 
     return await axios.post(baseUrl, blogDetail, config);
+  } catch (error) {
+    throw new Error(error.response.data.error);
+  }
+};
+
+const addComment = async (blogId, comment) => {
+  const commentObj = {
+    comment,
+  };
+
+  try {
+    return await axios.post(`${baseUrl}/${blogId}/comments`, commentObj);
   } catch (error) {
     throw new Error(error.response.data.error);
   }
@@ -50,4 +62,4 @@ const remove = async (blogId, token) => {
   }
 };
 
-export default { getAll, add, update, remove };
+export default { getAll, add: addBlog, addComment, update, remove };
