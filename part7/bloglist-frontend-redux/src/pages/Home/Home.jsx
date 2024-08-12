@@ -7,7 +7,7 @@ import BlogForm from "./BlogForm.jsx";
 
 import Togglable from "@/components/Togglable.jsx";
 
-const Home = ({ loginInfo, setLoginInfo, isClicked, setIsClicked }) => {
+const Home = ({ loginInfo, setLoginInfo, setIsClicked }) => {
   const user = useSelector((state) => state.user.loggedInUser);
 
   const blogRef = useRef(null);
