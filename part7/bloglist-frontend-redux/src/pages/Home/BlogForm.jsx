@@ -42,6 +42,7 @@ const BlogForm = ({ blogRef }) => {
         <div>
           <label htmlFor="title">title: </label>
           <input
+            className="outline-0"
             data-testid="blog-title"
             type="text"
             id="title"
@@ -55,6 +56,7 @@ const BlogForm = ({ blogRef }) => {
         <div>
           <label htmlFor="author">author: </label>
           <input
+            className="outline-0"
             data-testid="blog-author"
             type="text"
             id="author"
@@ -68,6 +70,7 @@ const BlogForm = ({ blogRef }) => {
         <div>
           <label htmlFor="url">url: </label>
           <input
+            className="outline-0"
             data-testid="blog-url"
             type="text"
             id="url"
@@ -78,7 +81,9 @@ const BlogForm = ({ blogRef }) => {
           />
         </div>
 
-        <Button data-testid="blog-form-submit">Add</Button>
+        <Button className="w-full" data-testid="blog-form-submit">
+          Add
+        </Button>
       </form>
     </>
   );

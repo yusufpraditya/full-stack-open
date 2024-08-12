@@ -12,11 +12,15 @@ import { initializeUsers, setSignedInUser } from "@/reducers/userReducer.js";
 import { useLocalStorage } from "@/hooks/useLocalStorage.js";
 import Notification from "@/components/Notification.jsx";
 
+import "@/index.css";
+
 const App = () => {
   const user = useSelector((state) => state.user.loggedInUser);
   const notification = useSelector((state) => state.notification);
-  const [loginInfo, setLoginInfo] = useState({ username: "", password: "" });
   const userFromLocalStorage = useLocalStorage("loggedInUser");
+
+  const [loginInfo, setLoginInfo] = useState({ username: "", password: "" });
+  const [isClicked, setIsClicked] = useState(true);
 
   const dispatch = useDispatch();
 
@@ -27,22 +31,29 @@ const App = () => {
   }, []);
 
   return (
-    <>
+    <div className="relative h-screen">
       {user !== null && <Navbar setLoginInfo={setLoginInfo} />}
-      {notification.content && (
+
+      {notification.content && isClicked && (
         <Notification notification={notification.content} />
       )}
       <Routes>
         <Route
           path="/"
-          element={<Home loginInfo={loginInfo} setLoginInfo={setLoginInfo} />}
+          element={
+            <Home
+              loginInfo={loginInfo}
+              setLoginInfo={setLoginInfo}
+              setIsClicked={setIsClicked}
+            />
+          }
         />
         <Route path="/users" element={<Users />} />
         <Route path="/users/:id" element={<User />} />
         <Route path="/blogs" element={<BlogList />} />
         <Route path="/blogs/:id" element={<Blog />} />
       </Routes>
-    </>
+    </div>
   );
 };
 

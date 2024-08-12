@@ -42,7 +42,7 @@ export const initializeUsers = () => {
       dispatch(setUsers(users));
     } catch (error) {
       console.error(error);
-      dispatch(setNotification("error", error.message, 60));
+      dispatch(setNotification("error", error.message));
     }
   };
 };

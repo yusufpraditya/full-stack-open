@@ -7,28 +7,32 @@ import BlogForm from "./BlogForm.jsx";
 
 import Togglable from "@/components/Togglable.jsx";
 
-import "@/App.css";
-
-const Home = ({ loginInfo, setLoginInfo }) => {
+const Home = ({ loginInfo, setLoginInfo, isClicked, setIsClicked }) => {
   const user = useSelector((state) => state.user.loggedInUser);
 
   const blogRef = useRef(null);
 
   return (
-    <div>
-      {user === null && (
-        <LoginForm loginInfo={loginInfo} setLoginInfo={setLoginInfo} />
-      )}
+    <div className="flex justify-center">
+      <div className="p-4 border-2 shadow-lg rounded-lg flex flex-col items-center">
+        {user === null && (
+          <LoginForm
+            loginInfo={loginInfo}
+            setLoginInfo={setLoginInfo}
+            setIsClicked={setIsClicked}
+          />
+        )}
 
-      {user !== null && (
-        <>
-          <Togglable buttonLabel="New blog" ref={blogRef}>
-            <BlogForm blogRef={blogRef} />
-          </Togglable>
+        {user !== null && (
+          <>
+            <Togglable buttonLabel="New blog" ref={blogRef}>
+              <BlogForm blogRef={blogRef} />
+            </Togglable>
 
-          <BlogList />
-        </>
-      )}
+            <BlogList />
+          </>
+        )}
+      </div>
     </div>
   );
 };

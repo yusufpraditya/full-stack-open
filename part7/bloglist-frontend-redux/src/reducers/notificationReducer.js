@@ -22,7 +22,13 @@ const notificationSlice = createSlice({
 const { setContent, clearContent, setTimeoutId, clearTimeoutId } =
   notificationSlice.actions;
 
-export const setNotification = (type, message, delayInSeconds = 3) => {
+export const clearNotification = () => {
+  return (dispatch) => {
+    dispatch(clearContent());
+  };
+};
+
+export const setNotification = (type, message, delayInSeconds = 5) => {
   return async (dispatch, getState) => {
     const state = getState().notification;
 

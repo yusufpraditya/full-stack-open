@@ -1,15 +1,17 @@
-import styled from "styled-components";
+import { cn } from "@/utils/cn.js";
 
-const Button = styled.button`
-  background-color: var(--primary);
-  padding: 8px 12px;
-  margin: 2px;
-  border: none;
-  border-radius: 8px;
-
-  &:hover {
-    cursor: pointer;
-  }
-`;
+const Button = ({ children, className, ...props }) => {
+  return (
+    <button
+      {...props}
+      className={cn(
+        "bg-[--primary] px-3 py-2 m-0.5 border-none rounded-md hover:shadow-md",
+        className,
+      )}
+    >
+      {children}
+    </button>
+  );
+};
 
 export default Button;

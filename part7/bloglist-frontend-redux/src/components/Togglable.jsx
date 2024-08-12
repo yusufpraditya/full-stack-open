@@ -17,16 +17,24 @@ const Togglable = forwardRef((props, ref) => {
   });
 
   return (
-    <div>
+    <div className="w-full">
       {!visible && (
-        <Button data-testid="togglable-show-btn" onClick={toggleVisibility}>
+        <Button
+          className="w-full"
+          data-testid="togglable-show-btn"
+          onClick={toggleVisibility}
+        >
           {props.buttonLabel}
         </Button>
       )}
       {visible && (
         <>
           {props.children}
-          <Button data-testid="togglable-cancel-btn" onClick={toggleVisibility}>
+          <Button
+            className="w-full bg-red-600 text-white mt-2"
+            data-testid="togglable-cancel-btn"
+            onClick={toggleVisibility}
+          >
             Cancel
           </Button>
         </>

@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectUserDetailById } from "@/reducers/userReducer.js";
 
@@ -10,14 +10,24 @@ const User = () => {
   if (!user) return null;
 
   return (
-    <div>
-      <h2>{user.name}</h2>
-      <h3>Added blogs:</h3>
-      <ul>
+    <div className="flex justify-center">
+      <div className="flex flex-col items-center shadow-md rounded-lg p-4">
+        <h1 className="font-medium mb-4">{user.name}</h1>
+        <h4 className="mb-1">Added blogs:</h4>
+        {user.blogs.length === 0 && <div>(Empty)</div>}
+
         {user.blogs.map((blog) => {
-          return <li key={blog.id}>{blog.title}</li>;
+          return (
+            <NavLink
+              key={blog.id}
+              to={`/blogs/${blog.id}`}
+              className="block p-1 w-full hover:bg-black hover:text-white hover:cursor-pointer"
+            >
+              {blog.title}
+            </NavLink>
+          );
         })}
-      </ul>
+      </div>
     </div>
   );
 };

@@ -1,22 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "@/reducers/userReducer.js";
 import { useNavigate, NavLink } from "react-router-dom";
-import styled from "styled-components";
 import Button from "@/components/Button.jsx";
-
-const Nav = styled.nav`
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #e3e3e3;
-`;
-
-const StyledNavLink = styled(NavLink)`
-  margin: 0 5px;
-
-  &.active {
-    background-color: white;
-  }
-`;
 
 const Navbar = ({ setLoginInfo }) => {
   const user = useSelector((state) => state.user.loggedInUser);
@@ -26,7 +11,6 @@ const Navbar = ({ setLoginInfo }) => {
 
   const handleLogoutButton = () => {
     window.localStorage.removeItem("loggedInUser");
-    window.localStorage.removeItem("users");
 
     dispatch(logoutUser());
 
@@ -39,15 +23,34 @@ const Navbar = ({ setLoginInfo }) => {
   };
 
   return (
-    <Nav>
-      <StyledNavLink to="/">Home</StyledNavLink>
-      <StyledNavLink to="/blogs">Blogs</StyledNavLink>
-      <StyledNavLink to="/users">Users</StyledNavLink>
-      <span>
-        {user.name} logged in{" "}
-        <Button onClick={handleLogoutButton}>Logout</Button>
-      </span>
-    </Nav>
+    <nav className="bg-white shadow-md px-4 py-1 mb-3 flex justify-between items-center">
+      <div className="flex gap-8">
+        <NavLink
+          className="[&.active]:bg-black [&.active]:text-white rounded-md px-4 py-2"
+          to="/"
+        >
+          Home
+        </NavLink>
+        <NavLink
+          className="[&.active]:bg-black [&.active]:text-white rounded-md px-4 py-2"
+          to="/blogs"
+        >
+          Blogs
+        </NavLink>
+        <NavLink
+          className="[&.active]:bg-black [&.active]:text-white rounded-md px-4 py-2"
+          to="/users"
+        >
+          Users
+        </NavLink>
+      </div>
+      <div>
+        <span>
+          {user.name} logged in{" "}
+          <Button onClick={handleLogoutButton}>Logout</Button>
+        </span>
+      </div>
+    </nav>
   );
 };
 
