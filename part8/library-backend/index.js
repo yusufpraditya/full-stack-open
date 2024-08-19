@@ -114,6 +114,11 @@ const typeDefs = `
 `;
 
 const resolvers = {
+  Author: {
+    bookCount: (root) => {
+      return books.filter((book) => book.author === root.name).length;
+    },
+  },
   Query: {
     bookCount: () => books.length,
     authorCount: () => authors.length,
@@ -128,14 +133,7 @@ const resolvers = {
           book.author === args.author && book.genres.includes(args.genre),
       );
     },
-    allAuthors: () => {
-      return authors.map((author) => {
-        return {
-          ...author,
-          bookCount: books.filter((book) => book.author === author.name).length,
-        };
-      });
-    },
+    allAuthors: () => authors,
   },
   Mutation: {
     addBook: (root, args) => {
@@ -158,6 +156,8 @@ const resolvers = {
       }
 
       const updatedAuthor = { ...oldAuthor, born: args.setBornTo };
+
+      console.log(updatedAuthor);
 
       authors = authors.map((author) =>
         author.name === oldAuthor.name ? updatedAuthor : author,
