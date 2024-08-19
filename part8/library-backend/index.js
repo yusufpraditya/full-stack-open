@@ -157,8 +157,6 @@ const resolvers = {
 
       const updatedAuthor = { ...oldAuthor, born: args.setBornTo };
 
-      console.log(updatedAuthor);
-
       authors = authors.map((author) =>
         author.name === oldAuthor.name ? updatedAuthor : author,
       );
