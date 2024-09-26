@@ -5,9 +5,7 @@ import { useState } from "react";
 const Authors = () => {
   const queryResult = useQuery(ALL_AUTHORS);
 
-  const [updateAuthor, mutationResult] = useMutation(UPDATE_AUTHOR);
-
-  console.log(mutationResult, queryResult);
+  const [updateAuthor] = useMutation(UPDATE_AUTHOR);
 
   const [birthYear, setBirthYear] = useState("");
 

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8b26f1d8-6186-4689-a255-76a0845cfcaa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part8/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part8/library-backend/models/authorModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part8/library-backend/models/bookModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part8/library-backend/models/userModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part8/library-frontend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part8/library-frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part8/library-frontend/src/components/AuthorizedRoute.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part8/library-frontend/src/components/Login.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part8/library-frontend/src/components/Notification.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part8/library-frontend/src/components/Recommend.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BMI/bmiCalculator.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BMI/dist/bmiCalculator.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BMI/dist/bmiCalculator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BMI/dist/exerciseCalculator.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BMI/dist/exerciseCalculator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BMI/dist/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BMI/dist/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BMI/dist/utils.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BMI/dist/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BMI/eslint.config.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BMI/exerciseCalculator.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BMI/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BMI/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BMI/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BMI/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BMI/utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseinfo-ts/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseinfo-ts/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseinfo-ts/eslint.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseinfo-ts/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseinfo-ts/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseinfo-ts/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseinfo-ts/public/vite.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseinfo-ts/src/App.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseinfo-ts/src/assets/react.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseinfo-ts/src/components/Content.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseinfo-ts/src/components/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseinfo-ts/src/components/Part.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseinfo-ts/src/components/Total.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseinfo-ts/src/main.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseinfo-ts/src/types/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseinfo-ts/src/vite-env.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseinfo-ts/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseinfo-ts/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseinfo-ts/tsconfig.node.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../courseinfo-ts/vite.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flight-diary-backend/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flight-diary-backend/.eslintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flight-diary-backend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flight-diary-backend/data/entries.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flight-diary-backend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flight-diary-backend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flight-diary-backend/src/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flight-diary-backend/src/routes/diaries.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flight-diary-backend/src/services/diaryService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flight-diary-backend/src/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flight-diary-backend/src/utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flight-diary-backend/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/flight-diary-frontend.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eslint.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/vite.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/react.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vite-env.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.node.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-backend/data/diagnoses.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-backend/data/patients.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-backend/eslint.config.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-backend/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-backend/middlewares/errorMiddleware.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-backend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-backend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-backend/routes/diagnoses.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-backend/routes/patients.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-backend/services/patientService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-backend/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-backend/types/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-backend/utils/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-frontend/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-frontend/.eslintrc.cjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-frontend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-frontend/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-frontend/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-frontend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-frontend/public/vite.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-frontend/src/App.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-frontend/src/components/AddPatientModal/AddPatientForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-frontend/src/components/AddPatientModal/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-frontend/src/components/HealthRatingBar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-frontend/src/components/PatientListPage/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-frontend/src/constants.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-frontend/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-frontend/src/main.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-frontend/src/services/patients.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-frontend/src/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-frontend/src/vite-env.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-frontend/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-frontend/tsconfig.node.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../patientor-frontend/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../part3/phonebook-fullstack/eslint.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../../part3/phonebook-fullstack/eslint.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../part8/library-backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../part8/library-backend/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../part8/library-backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../part8/library-backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../part8/library-backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../part8/library-backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../part8/library-frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../part8/library-frontend/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../part8/library-frontend/src/components/Authors.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../part8/library-frontend/src/components/Authors.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../part8/library-frontend/src/components/Books.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../part8/library-frontend/src/components/Books.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../part8/library-frontend/src/components/NewBook.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../part8/library-frontend/src/components/NewBook.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../part8/library-frontend/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../part8/library-frontend/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../part8/library-frontend/src/queries/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../part8/library-frontend/src/queries/index.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "cvpfus"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/cvpfus/full-stack-open.git",
+    "accountId": "e694ed14-a525-4ab8-8f72-7e6621a5d1f5"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2mSWM83JsNCIZPxkVFvqjsFFHKD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "D:\\Programming\\full-stack-open\\part9\\flight-diary-frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="npm dev" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.18034.50" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8b26f1d8-6186-4689-a255-76a0845cfcaa" name="Changes" comment="" />
+      <created>1727070406814</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1727070406814</updated>
+      <workItem from="1727070407908" duration="290000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
